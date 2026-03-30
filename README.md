@@ -1,5 +1,6 @@
 # 📖 Femei de știință din România – Flip Book
-https://bogdanstanciulescu.github.io/Femei-de-stiinta-din-Romania-Flip-Book/
+#https://bogdanstanciulescu.github.io/Femei-de-stiinta-din-Romania-Flip-Book/
+
 🇷🇴 Descriere
 
 Acest proiect reprezintă o carte interactivă (flip book) realizată în HTML, CSS și JavaScript, dedicată unor femei de știință remarcabile din România. Utilizatorul poate răsfoi paginile printr-o animație realistă de tip carte.
