@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carte interactivă fizică femei de știință din românia</title>
+
+  <!-- PageFlip CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/page-flip/dist/css/page-flip.css"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Book container */
+    #book {
+      width: auto;
+      height: auto;
+    }
+
+    /* Page base */
+    .page {
+      background: white;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===================== */
+    /* ✅ STIL COPERTĂ */
+    /* ===================== */
+    .cover-page {
+      background: linear-gradient(to bottom, #111, #333);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .cover-page h1 {
+      font-size: clamp(28px, 4vw, 60px);
+    }
+
+    .cover-page p {
+      font-size: clamp(14px, 2vw, 22px);
+    }
+    /* ===================== */
+    /* ✅ STIL PAGINI CONȚINUT */
+    /* ===================== */
+    .content-page {
+      padding: 0;
+    }
+
+    /* Title bar */
+    .page-title {
+      padding: 20px;
+      background: #f2f2f2;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .page-title h2 {
+      font-size: clamp(18px, 2vw, 30px);
+    }
+    /* Body sections */
+    .page-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      flex: 1;
+      padding: 15px;
+
+      display: flex;
+      flex-direction: column;   /* ✅ MEREU VERTICAL */
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+    .section p {
+      font-size: clamp(12px, 1.2vw, 18px);
+      line-height: 1.4;
+    }
+    /* Sketchfab embed */
+    .section.model iframe {
+      width: 100%;
+      height: width;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* ===================== */
+    /* ⚙️ STIL SETĂRI */
+    /* ===================== */
+    .settings-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    .settings-panel {
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      background: #222;
+      padding: 15px;
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+      color: white;
+      width: 200px;
+    }
+
+    .settings-panel input {
+      width: 100%;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .apply-btn {
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ⚙️ Settings Button -->
+  <button class="settings-btn">⚙️ Setări</button>
+
+  <!-- Settings Panel -->
+  <div class="settings-panel" id="settingsPanel">
+    <label>Lățime:</label>
+    <input type="number" id="bookWidth" value="600">
+
+    <label>Înălțime:</label>
+    <input type="number" id="bookHeight" value="750">
+
+    <button class="apply-btn" id="applySize">Aplică setările</button>
+  </div>
+
+  <!-- Flipbook -->
+  <div id="book">
+
+    <!-- ✅ COPERTĂ FAȚĂ -->
+    <div class="page cover-page">
+      <h1>Femei de știință din românia flip book</h1>
+      <p>Realizat de Stănciulescu Bogdan</p>
+      <p>sub îndrumarea profesorului Lidia Dumbravă</p>
+      <p>Atinge și răsfoiește prin lumea științei.</p>
+      <button onclick="document.location='https://github.com/bogdanstanciulescu/Femei-de-stiinta-din-Romania-Flip-Book/releases/tag/V1.0'">DESCARCĂ MATERIALUL</button>
+    </div>
+
+    <!-- ✅ PAGINA 1 -->
+    <div class="page content-page">
+
+      <div class="page-title">
+        <h2>Ștefania Mărăcineanu</h2>
+      </div>
+
+      <div class="page-body">
+
+        <div class="section">
+          <p>Ștefania Mărăcineanu s-a născut la 18 iunie 1882, în București. A fost una dintre primele femei fizician din România, manifestând încă din tinerețe un interes deosebit pentru științele exacte. A studiat la Universitatea din București, iar ulterior și-a continuat cercetările la Paris, unde a lucrat în laboratorul celebrei Marie Curie. Activitatea sa s-a concentrat în special asupra radioactivității, domeniu aflat în plină dezvoltare la începutul secolului XX.
+          </p>
+          </div>
+
+        <div class="section model">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Stefania Maracineanu" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/315d07d22c88430497072e5325842d79/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/stefania-maracineanu-315d07d22c88430497072e5325842d79?utm_medium=embed&utm_campaign=share-popup&utm_content=315d07d22c88430497072e5325842d79" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Stefania Maracineanu </a> by <a href="https://sketchfab.com/BogdanS2208?utm_medium=embed&utm_campaign=share-popup&utm_content=315d07d22c88430497072e5325842d79" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> BogdanS2208 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=315d07d22c88430497072e5325842d79" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </div>
+
+        <div class="section">
+          <p>Cea mai importantă contribuție a Ștefaniei Mărăcineanu este legată de studiul radioactivității artificiale. Ea a realizat experimente care au demonstrat că anumite substanțe pot deveni radioactive în urma expunerii la radiații, idee considerată revoluționară la acea vreme. Cercetările sale au anticipat descoperiri ulterioare importante din fizica nucleară, contribuind la dezvoltarea acestui domeniu.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ PAGINA 2 -->
+    <div class="page content-page">
+
+      <div class="page-title">
+        <h2>Elisa Leonida Zamfirescu</h2>
+      </div>
+
+      <div class="page-body">
+
+        <div class="section">
+          <p>Elisa Leonida Zamfirescu s-a născut la 10 noiembrie 1887, la Galați, într-o familie numeroasă. A fost una dintre primele femei inginer din lume, într-o perioadă în care accesul femeilor la studii tehnice era foarte limitat. După ce i-a fost refuzată admiterea la o școală tehnică din București, și-a continuat studiile în Germania, la Academia Regală Tehnică din Berlin, unde a reușit să se remarce prin seriozitate și rezultate excelente.</p>
+        </div>
+
+        <div class="section model">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Elisa Leonida Zamfirescu" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/221cb926651448e7aa88928ea7917b5c/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/elisa-leonida-zamfirescu-221cb926651448e7aa88928ea7917b5c?utm_medium=embed&utm_campaign=share-popup&utm_content=221cb926651448e7aa88928ea7917b5c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Elisa Leonida Zamfirescu </a> by <a href="https://sketchfab.com/BogdanS2208?utm_medium=embed&utm_campaign=share-popup&utm_content=221cb926651448e7aa88928ea7917b5c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> BogdanS2208 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=221cb926651448e7aa88928ea7917b5c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </div>
+
+        <div class="section">
+          <p>Cea mai importantă realizare a Elisei Leonida Zamfirescu constă în activitatea sa ca inginer în domeniul geologiei și exploatării resurselor naturale. Ea a lucrat la Institutul Geologic al României, contribuind la identificarea și studiul zăcămintelor de petrol, cărbune și alte resurse minerale. Prin munca sa, a deschis drumul femeilor în inginerie și a demonstrat că acestea pot avea un rol important în domeniile tehnice.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ PAGINA 3 -->
+    <div class="page content-page">
+
+      <div class="page-title">
+        <h2>Aurora Gruescu</h2>
+      </div>
+
+      <div class="page-body">
+
+        <div class="section">
+          <p>Aurora Gruescu s-a născut în anul 1914 și este cunoscută ca fiind prima femeie inginer silvicultor din lume. A studiat la Facultatea de Silvicultură din București, într-o perioadă în care acest domeniu era dominat aproape exclusiv de bărbați. Prin perseverență și pasiune pentru natură, a reușit să își construiască o carieră solidă în silvicultură.
+        </div>
+
+        <div class="section model">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Aurora Gruescu" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0238e8e8e3c347bc927b2366800a45c5/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/aurora-gruescu-0238e8e8e3c347bc927b2366800a45c5?utm_medium=embed&utm_campaign=share-popup&utm_content=0238e8e8e3c347bc927b2366800a45c5" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Aurora Gruescu </a> by <a href="https://sketchfab.com/BogdanS2208?utm_medium=embed&utm_campaign=share-popup&utm_content=0238e8e8e3c347bc927b2366800a45c5" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> BogdanS2208 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=0238e8e8e3c347bc927b2366800a45c5" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </div>
+
+        <div class="section">
+          <p>Cea mai importantă contribuție a Aurorei Gruescu este legată de protejarea și dezvoltarea pădurilor din România. Ea a participat la proiecte de împădurire și la gestionarea durabilă a resurselor forestiere, contribuind la conservarea mediului. Activitatea sa a avut un impact semnificativ asupra protecției naturii și a inspirat generații de femei să urmeze cariere în domenii tehnice și ecologice.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ PAGINA 4 -->
+    <div class="page content-page">
+
+      <div class="page-title">
+        <h2>Ana Aslan</h2>
+      </div>
+
+      <div class="page-body">
+
+        <div class="section">
+          <p>Ana Aslan s-a născut la 1 ianuarie 1897, la Brăila, și a fost unul dintre cei mai importanți medici români. A studiat medicina la București și a devenit profesor universitar, dedicându-și cariera cercetării și tratării procesului de îmbătrânire. A fondat primul institut de geriatrie din lume, transformând România într-un centru important al cercetării în acest domeniu.
+          </p>
+        </div>
+
+        <div class="section model">
+            <div class="sketchfab-embed-wrapper"> <iframe title="Ana Aslan" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8416523b1ce14d19ab040adfb70c90d4/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/ana-aslan-8416523b1ce14d19ab040adfb70c90d4?utm_medium=embed&utm_campaign=share-popup&utm_content=8416523b1ce14d19ab040adfb70c90d4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Ana Aslan </a> by <a href="https://sketchfab.com/BogdanS2208?utm_medium=embed&utm_campaign=share-popup&utm_content=8416523b1ce14d19ab040adfb70c90d4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> BogdanS2208 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8416523b1ce14d19ab040adfb70c90d4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+        <div class="section">
+          <p>Cea mai cunoscută realizare a Anei Aslan este descoperirea tratamentului Gerovital H3, utilizat pentru întârzierea procesului de îmbătrânire. Acest tratament a devenit celebru la nivel internațional și a fost folosit de numeroase personalități. Prin cercetările sale, Ana Aslan este considerată o pionieră a geriatriei și gerontologiei moderne.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ COPERTĂ SPATE -->
+    <div class="page cover-page">
+      <h1>Sfârșit</h1>
+      <p>Mulțumesc pentru atenție!</p>
+      <p>Realizat de Stănciulescu Bogdan</p>
+      <p>sub îndrumarea profesorului Lidia Dumbravă</p>
+      <button onclick="document.location='https://github.com/bogdanstanciulescu/Femei-de-stiinta-din-Romania-Flip-Book/releases/tag/V1.0'">DESCARCĂ MATERIALUL</button>
+    </div>
+
+  </div>
+
+  <!-- PageFlip JS -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+  <script>
+    let pageFlip;
+
+    const pagesHTML = document.getElementById("book").innerHTML;
+
+    function initBook(width, height) {
+      const oldBook = document.getElementById("book");
+      oldBook.remove();
+
+      const newBook = document.createElement("div");
+      newBook.id = "book";
+      newBook.innerHTML = pagesHTML;
+
+      document.body.appendChild(newBook);
+
+      pageFlip = new St.PageFlip(newBook, {
+        width: width,
+        height: height,
+        size: "fixed",
+        showCover: true,
+        maxShadowOpacity: 0.4
+      });
+
+      pageFlip.loadFromHTML(newBook.querySelectorAll(".page"));
+    }
+
+    window.onload = () => initBook(600, 750);
+
+    // Settings toggle
+    const settingsBtn = document.querySelector(".settings-btn");
+    const panel = document.getElementById("settingsPanel");
+
+    settingsBtn.onclick = () => {
+      panel.style.display =
+        panel.style.display === "flex" ? "none" : "flex";
+    };
+
+    // Apply new size
+    document.getElementById("applySize").onclick = () => {
+      const w = parseInt(document.getElementById("bookWidth").value);
+      const h = parseInt(document.getElementById("bookHeight").value);
+
+      initBook(w, h);
+    };
+  </script>
+
+</body>
+</html>
